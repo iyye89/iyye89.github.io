@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<title>完美赛车</title>
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="keywords" content="完美赛车" />
+<meta name="description" content="完美赛车" />
+<meta charset="utf-8">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.01, minimal-ui" />
+<style>
+body {
+margin: 0px;
+padding: 0px;
+width: 100%;
+background: url("images/bg.png");
+}	
+canvas {	
+-ms-touch-action: none;
+image-rendering: -o-crisp-edges;           
+image-rendering: optimize-contrast;        
+-ms-interpolation-mode: nearest-neighbor;  
+-webkit-tap-highlight-color: rgba(0,0,0,0);
+-moz-tap-highlight-color: rgba(0,0,0,0);
+tap-highlight-color: rgba(0,0,0,0);
+user-select: none;
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+} 
+</style>
+<script src="viewporter.js"></script>
+<script type="text/javascript" src="gameops.js"></script>
+</head>
+<body>
+<div id="viewporter">
+<canvas id="canvas" moz-opaque></canvas>
+</div>
+</body>
+<script type="text/javascript">
+function launchFullscreen(element) {
+element.style.backgroundImage = "url('images/bg.png')"
+if(element.requestFullscreen) {
+element.requestFullscreen();
+} else if(element.mozRequestFullScreen) {
+element.mozRequestFullScreen();
+} else if(element.webkitRequestFullscreen) {
+element.webkitRequestFullscreen();
+} else if(element.msRequestFullscreen) {
+element.msRequestFullscreen();
+}
+}
+</script>
+<script src="TweenMax.min.js"></script>
+<script src="seedRandom.js"></script>
+<script src="howler.min.js"></script>
+<script src="VisibilityManager.js"></script>
+<script src="app.js"></script>
+</html>
