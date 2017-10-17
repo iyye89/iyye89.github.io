@@ -1,0 +1,35 @@
+<TextureAtlas imagePath="sprites.png">
+	<SubTexture name="Mutemusicbnt2.png" x="721" y="1901" width="98" height="98"/>
+	<SubTexture name="a_big_tree2.png" x="554" y="1156" width="199" height="213"/>
+	<SubTexture name="bgPause2.png" x="0" y="1156" width="552" height="441"/>
+	<SubTexture name="blue_light2.png" x="399" y="1759" width="46" height="45"/>
+	<SubTexture name="car2.png" x="233" y="1978" width="68" height="45"/>
+	<SubTexture name="car_enemy_ice2.png" x="161" y="1978" width="70" height="47"/>
+	<SubTexture name="creditsBnt2.png" x="719" y="1048" width="98" height="98"/>
+	<SubTexture name="etoile2.png" x="719" y="944" width="107" height="102"/>
+	<SubTexture name="etoile_particule2.png" x="447" y="1759" width="43" height="45"/>
+	<SubTexture name="flags2.png" x="0" y="1806" width="355" height="53"/>
+	<SubTexture name="goal_container2.png" x="161" y="1898" width="149" height="78"/>
+	<SubTexture name="levelsbnt2.png" x="755" y="1444" width="96" height="96"/>
+	<SubTexture name="logo2.png" x="0" y="921" width="599" height="233"/>
+	<SubTexture name="menu_coins2.png" x="0" y="295" width="640" height="624"/>
+	<SubTexture name="menubnt2.png" x="721" y="1801" width="98" height="98"/>
+	<SubTexture name="musicbnt2.png" x="755" y="1148" width="98" height="98"/>
+	<SubTexture name="objectif_container2.png" x="0" y="0" width="640" height="293"/>
+	<SubTexture name="p_big_tree2.png" x="554" y="1371" width="199" height="213"/>
+	<SubTexture name="pause_bnt_bg2.png" x="0" y="1898" width="159" height="142"/>
+	<SubTexture name="pausebnt2.png" x="601" y="1061" width="82" height="83"/>
+	<SubTexture name="playbtn2.png" x="558" y="1801" width="161" height="161"/>
+	<SubTexture name="player_menu2.png" x="642" y="0" width="170" height="553"/>
+	<SubTexture name="police_menu2.png" x="642" y="555" width="153" height="387"/>
+	<SubTexture name="preload_bar_back2.png" x="0" y="1861" width="243" height="35"/>
+	<SubTexture name="record_container2.png" x="0" y="1599" width="397" height="205"/>
+	<SubTexture name="red_light2.png" x="303" y="1978" width="47" height="44"/>
+	<SubTexture name="replaybnt2.png" x="755" y="1248" width="96" height="96"/>
+	<SubTexture name="resumebnt2.png" x="755" y="1346" width="96" height="96"/>
+	<SubTexture name="s_big_tree2.png" x="554" y="1586" width="199" height="213"/>
+	<SubTexture name="score_container2.png" x="399" y="1599" width="148" height="78"/>
+	<SubTexture name="shield_sprite2.png" x="601" y="944" width="116" height="115"/>
+	<SubTexture name="timer_container2.png" x="399" y="1679" width="148" height="78"/>
+	<SubTexture name="w_big_tree2.png" x="357" y="1806" width="199" height="213"/>
+</TextureAtlas>
