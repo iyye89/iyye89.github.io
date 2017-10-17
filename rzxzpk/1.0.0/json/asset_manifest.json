@@ -1,0 +1,291 @@
+{
+    "img_sd": [
+        {
+            "src": "./img/atlas1-sd.png",
+            "id": "atlas1"
+        }
+        ,
+        {
+            "src": "./img/star-sd.png",
+            "id": "particle_star"
+        }
+        ,
+        {
+            "src": "./img/boss_star-sd.png",
+            "id": "boss_star"
+        }
+        ,
+        {
+            "src": "./img/intro-sd.png",
+            "id": "intro"
+        }
+    ],
+    "img_hd": [
+        {
+            "src": "./img/atlas1-hd.png",
+            "id": "atlas1"
+        }
+        ,
+        {
+            "src": "./img/star-hd.png",
+            "id": "particle_star"
+        }
+        ,
+        {
+            "src": "./img/boss_star-hd.png",
+            "id": "boss_star"
+        }
+        ,
+        {
+            "src": "./img/intro-hd.png",
+            "id": "intro"
+        }
+    ],
+    "json_sd": [
+        {
+            "src": "./img/atlas1-sd.json",
+            "id": "atlas1",
+            "type": "atlas"
+        }
+        ,
+        {
+            "src": "./animation/pig_skeleton-sd.json",
+            "id": "piggy",
+            "type": "skeleton"
+        }
+        ,
+        {
+            "src": "./animation/dance_skeleton-sd.json",
+            "id": "pig_dance",
+            "type": "skeleton"
+        }
+        ,
+        {
+            "src": "./img/intro-sd.json",
+            "id": "intro",
+            "type": "atlas"
+        }
+    ],
+    "json_hd": [
+        {
+            "src": "./img/atlas1-hd.json",
+            "id": "atlas1",
+            "type": "atlas"
+        }
+        ,
+        {
+            "src": "./animation/pig_skeleton-hd.json",
+            "id": "piggy",
+            "type": "skeleton"
+        }
+        ,
+        {
+            "src": "./animation/dance_skeleton-hd.json",
+            "id": "pig_dance",
+            "type": "skeleton"
+        }
+        ,
+        {
+            "src": "./img/intro-hd.json",
+            "id": "intro",
+            "type": "atlas"
+        }
+    ],
+    "snd_webaudio": [
+        {
+            "src": "boing",
+            "id": "JUMP"
+        },
+        {
+            "src": "np_intro",
+            "id": "INTRO"
+        },
+        {
+            "src": "np_theme",
+            "grp": "music",
+            "id": "THEME"
+        },
+        {
+            "src": "np_battle",
+            "grp": "music",
+            "id": "BATTLE"
+        },
+        {
+            "src": "np_win",
+            "grp": "music",
+            "id": "WIN"
+        }
+        ,
+        {
+            "src": "ufo-pass",
+             "id": "UFO_FLY"
+        }
+        ,
+        {
+            "src": "fire",
+            "id": "FIRE"
+        }
+        ,
+        {
+            "src": "landing",
+            "id": "UFO_LAND"
+        }
+        ,
+        {
+            "src": "menu_open",
+            "id": "MENU_OPEN"
+        }
+        ,
+        {
+            "src": "collect",
+            "id": "COLLECT"
+        }
+        ,
+        {
+            "src": "kill_hazard",
+            "id": "KILL_HAZARD"
+        }
+        ,
+        {
+            "src": "respawn",
+            "id": "RESPAWN"
+        }
+        ,
+        {
+            "src": "win_level",
+            "id": "WIN_LEVEL"
+        }
+        ,
+        {
+            "src": "win_popup",
+            "id": "WIN_POPUP"
+        }
+        ,
+        {
+            "src": "button_press",
+            "id": "BUTTON_PRESS"
+        }
+        ,
+        {
+            "src": "jump_pad",
+            "id": "JUMP_PAD"
+        }
+        ,
+        {
+            "src": "intro_2",
+            "id": "INTRO_2"
+        }
+        ,
+        {
+            "src": "hit_hazard",
+            "id": "HIT_HAZARD"
+        }
+        ,
+        {
+            "src": "roll",
+            "id": "ROLL"
+        }
+        ,
+        {
+            "src": "swish1",
+            "id": "SWISH_1"
+        }
+        ,
+        {
+            "src": "bear_trap",
+            "id": "BEAR_TRAP"
+        }
+        ,
+        {
+            "src": "between_screen",
+            "id": "BETWEEN"
+        }
+        ,
+        {
+            "src": "boss_hit_player",
+            "id": "BOSS_HIT_PLAYER"
+        }
+        ,
+        {
+            "src": "boss_shoot",
+            "id": "BOSS_SHOOT"
+        }
+        ,
+        {
+            "src": "boss_enter",
+            "id": "BOSS_ENTER"
+        }
+        ,
+        {
+            "src": "boss_is_hit",
+            "id": "BOSS_IS_HIT"
+        }
+        ,
+        {
+            "src": "boss_is_destroyed",
+            "id": "BOSS_IS_DESTROYED"
+        }
+        ,
+        {
+            "src": "boss_miss",
+            "id": "BOSS_MISS"
+        }
+        ,
+        {
+            "src": "boss_craft",
+            "id": "BOSS_CRAFT"
+        }
+
+    ],
+    "snd_sprite": [
+        {
+            "src": "np_theme",
+            "grp": "music",
+            "id": "THEME"
+        }
+    ],
+    "json": [
+        {
+            "id": "level_1",
+            "src": "json/level_1.json"
+        },
+        {
+            "id": "level_2",
+            "src": "json/level_2.json"
+        },
+        {
+            "id": "level_3",
+            "src": "json/level_3.json"
+        },
+        {
+            "id": "level_4",
+            "src": "json/level_4.json"
+        },
+        {
+            "id": "level_5",
+            "src": "json/level_5.json"
+        },
+        {
+            "id": "level_6",
+            "src": "json/level_6.json"
+        },
+        {
+            "id": "level_7",
+            "src": "json/level_7.json"
+        },
+        {
+            "id": "level_8",
+            "src": "json/level_8.json"
+        },
+        {
+            "id": "level_9",
+            "src": "json/level_9.json"
+        },
+        {
+            "id": "level_10",
+            "src": "json/level_10.json"
+        }
+    ],
+    "bm_font_hd": [{"src": "./font/epicslash-hd.xml", "id": "epicslash"}],
+    "bm_font_sd": [{"src": "./font/epicslash-sd.xml", "id": "epicslash"}]
+}
