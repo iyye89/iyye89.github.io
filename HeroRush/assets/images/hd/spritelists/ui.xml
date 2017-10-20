@@ -9,6 +9,7 @@
     <SubTexture name="btn_back" x="906" y="696" width="69" height="69"/>
     <SubTexture name="btn_cars" x="480" y="648" width="93" height="93"/>
     <SubTexture name="btn_help" x="762" y="643" width="70" height="70" frameX="0" frameY="-5" frameWidth="70" frameHeight="80"/>
+    <SubTexture name="btn_moregames" x="762" y="715" width="0" height="0"/>
     <SubTexture name="btn_play" x="796" y="138" width="157" height="157"/>
     <SubTexture name="btn_prize" x="834" y="643" width="70" height="70"/>
     <SubTexture name="btn_records" x="575" y="653" width="93" height="93"/>
