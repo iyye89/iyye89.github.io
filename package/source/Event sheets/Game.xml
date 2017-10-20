@@ -1,0 +1,983 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Game</name>
+    <events>
+        <variable comment="Global level tracking" constant="0" name="historicalLevel" sid="2907769663474336" static="0" type="number">1</variable>
+        <variable comment="Number of collected bones" constant="0" name="bones" sid="7372155532519782" static="0" type="number">0</variable>
+        <variable comment="Number of chewtoys collected" constant="0" name="chewToys" sid="253220624217193" static="0" type="number">0</variable>
+        <variable comment="Current game level" constant="0" name="level" sid="4248418612132345" static="0" type="number">1</variable>
+        <event-block sid="116670430133609">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="4528186499671814" type="System" />
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="5672408906069231" type="btnRestart">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="31673916109124" type="btnHome">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block collapsed="1" sid="4850551649163102">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="6658119896818468" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="8759678011674111" type="lblLevel">
+                    <param id="0" name="Text">level</param>
+                </action>
+                <action id="0" name="Set text" sid="8752532076899322" type="lblBoneCount">
+                    <param id="0" name="Text">bones</param>
+                </action>
+                <action id="0" name="Set text" sid="6161118570913582" type="lblChewToyCount">
+                    <param id="0" name="Text">chewToys</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="1688436549324539">
+                    <conditions>
+                        <condition id="-3" inverted="1" name="Is on-screen" sid="7550272799726744" type="foodBowl" />
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="62726440959871" type="btnRestart">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>Level navigation</comment>
+        <comment>Touch box to destroy, spawn a bone, add to bone count.</comment>
+        <event-block sid="7893729532272333">
+            <conditions>
+                <condition id="3" name="On touched object" sid="8058192483473743" type="Touch">
+                    <param id="0" name="Object">crate</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="4577126624397617" type="System">
+                    <param id="0" name="Variable">bones</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="9808281471842705" type="crate">
+                    <param id="0" name="Object">dustExplosion</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="6188081054399962" type="crate">
+                    <param id="0" name="Object">bone</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="8873760827977244" type="crate" />
+            </actions>
+        </event-block>
+        <event-block sid="4816956556761706">
+            <conditions>
+                <condition id="3" name="On touched object" sid="7145008358916321" type="Touch">
+                    <param id="0" name="Object">steelPlank</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="3851880365923035" type="steelPlank" />
+            </actions>
+        </event-block>
+        <event-block sid="8652108454521764">
+            <conditions>
+                <condition id="3" name="On touched object" sid="4900860208530505" type="Touch">
+                    <param id="0" name="Object">woodPlank</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="2054344497452146" type="woodPlank" />
+            </actions>
+        </event-block>
+        <event-block sid="8879945666809387">
+            <conditions>
+                <condition id="3" name="On touched object" sid="9846382042224328" type="Touch">
+                    <param id="0" name="Object">woodPlankShort</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="6996498385774445" type="woodPlankShort" />
+            </actions>
+        </event-block>
+        <event-block sid="190026741530319">
+            <conditions>
+                <condition id="3" name="On touched object" sid="7913066804971133" type="Touch">
+                    <param id="0" name="Object">tnt</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="2474134607671716" type="Audio">
+                    <param id="0" name="Audio file">Bomb-SoundBible.com-891110113</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action behavior="Physics" id="5" name="Apply impulse at angle" sid="4843379821683492" type="crate">
+                    <param id="0" name="Impulse">30</param>
+                    <param id="1" name="Angle">angle(tnt.X, tnt.Y, crate.X, crate.Y)</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action behavior="Physics" id="5" name="Apply impulse at angle" sid="3014048864385834" type="woodPlankShort">
+                    <param id="0" name="Impulse">40</param>
+                    <param id="1" name="Angle">angle(tnt.X, tnt.Y, woodPlankShort.X, woodPlankShort.Y)</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action behavior="Physics" id="5" name="Apply impulse at angle" sid="6848956810579039" type="woodPlank">
+                    <param id="0" name="Impulse">30</param>
+                    <param id="1" name="Angle">angle(tnt.X, tnt.Y, woodPlank.X, woodPlank.Y)</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action behavior="Physics" id="5" name="Apply impulse at angle" sid="1718009633148542" type="steelPlank">
+                    <param id="0" name="Impulse">25</param>
+                    <param id="1" name="Angle">angle(tnt.X, tnt.Y, steelPlank.X, steelPlank.Y)</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="8529936855406645" type="tnt">
+                    <param id="0" name="Object">tntExplosion</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="6455852463398541" type="tnt" />
+            </actions>
+        </event-block>
+        <event-block sid="7836898509643887">
+            <conditions>
+                <condition id="3" name="On touched object" sid="7558155313183411" type="Touch">
+                    <param id="0" name="Object">btnRestart</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-26" name="Restart layout" sid="1784201690616313" type="System" />
+            </actions>
+        </event-block>
+        <comment>Go to title screen if home clicked</comment>
+        <event-block sid="2182979202928835">
+            <conditions>
+                <condition id="3" name="On touched object" sid="5800684950660493" type="Touch">
+                    <param id="0" name="Object">btnHome</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-21" name="Reset global variables" sid="3399896539644094" type="System" />
+                <action id="-2" name="Go to layout" sid="7277081519845156" type="System">
+                    <param id="0" name="Layout">Title</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="Controls navigation to levels when icons clicked." sid="3895455156695536" title="Level Navigation">
+            <sub-events>
+                <event-block collapsed="1" sid="3045569007079014">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="3368787853351272" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="4322411740897512">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="598094220814045" type="System">
+                                    <param id="0" name="Variable">historicalLevel</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="1735510125359195" type="levelIcon1">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="7781317180960771" type="levelIcon2">
+                                    <param id="0" name="Opacity">20</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="6753495381443588" type="levelIcon3">
+                                    <param id="0" name="Opacity">20</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="743054433971844" type="levelIcon4">
+                                    <param id="0" name="Opacity">20</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="4635955591161801" type="levelIcon5">
+                                    <param id="0" name="Opacity">20</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="7362707403362596" type="levelIcon6">
+                                    <param id="0" name="Opacity">20</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="9247154484521769" type="levelIcon7">
+                                    <param id="0" name="Opacity">20</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="3362207190719885" type="levelIcon8">
+                                    <param id="0" name="Opacity">20</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="9683888873807576" type="levelIcon9">
+                                    <param id="0" name="Opacity">20</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="2218884485803964" type="levelIcon10">
+                                    <param id="0" name="Opacity">20</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="8725157141875131">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="5417470037383244" type="System">
+                                    <param id="0" name="Variable">historicalLevel</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="9014529207651334" type="levelIcon1">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="7035395676907748" type="levelIcon2">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="3039046732498821" type="levelIcon3">
+                                    <param id="0" name="Opacity">20</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="4765163580356061" type="levelIcon4">
+                                    <param id="0" name="Opacity">20</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="5385169938442526" type="levelIcon5">
+                                    <param id="0" name="Opacity">20</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="796441669033896" type="levelIcon6">
+                                    <param id="0" name="Opacity">20</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="8397662451914427" type="levelIcon7">
+                                    <param id="0" name="Opacity">20</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="6838725990642411" type="levelIcon8">
+                                    <param id="0" name="Opacity">20</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="8008756650654593" type="levelIcon9">
+                                    <param id="0" name="Opacity">20</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="8919555942666764" type="levelIcon10">
+                                    <param id="0" name="Opacity">20</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5097941128811135">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="6463366843706326" type="System">
+                                    <param id="0" name="Variable">historicalLevel</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="1304711598624109" type="levelIcon1">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="9035524296761385" type="levelIcon2">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="3454968373246489" type="levelIcon3">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="9223005604162205" type="levelIcon4">
+                                    <param id="0" name="Opacity">20</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="8568690087429557" type="levelIcon5">
+                                    <param id="0" name="Opacity">20</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="7884653629805872" type="levelIcon6">
+                                    <param id="0" name="Opacity">20</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="9667572835844233" type="levelIcon7">
+                                    <param id="0" name="Opacity">20</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="3745382009989944" type="levelIcon8">
+                                    <param id="0" name="Opacity">20</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="8628945268295904" type="levelIcon9">
+                                    <param id="0" name="Opacity">20</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="1401084795371162" type="levelIcon10">
+                                    <param id="0" name="Opacity">20</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3417901911252709">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="6120438438209928" type="System">
+                                    <param id="0" name="Variable">historicalLevel</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="160920383296067" type="levelIcon1">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="52416425919151" type="levelIcon2">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="685087559701776" type="levelIcon3">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="890252805288046" type="levelIcon4">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="207496313980912" type="levelIcon5">
+                                    <param id="0" name="Opacity">20</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="5381871023523026" type="levelIcon6">
+                                    <param id="0" name="Opacity">20</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="8325592961069278" type="levelIcon7">
+                                    <param id="0" name="Opacity">20</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="7383953077148985" type="levelIcon8">
+                                    <param id="0" name="Opacity">20</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="2581175825277934" type="levelIcon9">
+                                    <param id="0" name="Opacity">20</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="7997358470739215" type="levelIcon10">
+                                    <param id="0" name="Opacity">20</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="958039245979436">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="539188984342318" type="System">
+                                    <param id="0" name="Variable">historicalLevel</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="5170391259836651" type="levelIcon1">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="1615943194667325" type="levelIcon2">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="1187420767330173" type="levelIcon3">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="7047551991915952" type="levelIcon4">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="23394697480703" type="levelIcon5">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="1396637781095756" type="levelIcon6">
+                                    <param id="0" name="Opacity">20</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="4355520190608424" type="levelIcon7">
+                                    <param id="0" name="Opacity">20</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="3518411837103452" type="levelIcon8">
+                                    <param id="0" name="Opacity">20</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="2700540992148635" type="levelIcon9">
+                                    <param id="0" name="Opacity">20</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="2024585109992282" type="levelIcon10">
+                                    <param id="0" name="Opacity">20</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1514621817433867">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="1414002099723315" type="System">
+                                    <param id="0" name="Variable">historicalLevel</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">6</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="7088578970080087" type="levelIcon1">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="9498492966206196" type="levelIcon2">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="1895774560433908" type="levelIcon3">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="2409012501457505" type="levelIcon4">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="7124393352143798" type="levelIcon5">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="6857868946393021" type="levelIcon6">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="6461353052688147" type="levelIcon7">
+                                    <param id="0" name="Opacity">20</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="5294948138175749" type="levelIcon8">
+                                    <param id="0" name="Opacity">20</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="5799166023167561" type="levelIcon9">
+                                    <param id="0" name="Opacity">20</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="896792292869986" type="levelIcon10">
+                                    <param id="0" name="Opacity">20</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6161948965838427">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="9554271229789624" type="System">
+                                    <param id="0" name="Variable">historicalLevel</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">7</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="1291650288761177" type="levelIcon1">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="7767010508105347" type="levelIcon2">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="3792132203018949" type="levelIcon3">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="5395301770939989" type="levelIcon4">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="9527136511323063" type="levelIcon5">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="8312131481347519" type="levelIcon6">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="717915423274319" type="levelIcon7">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="6097337372358927" type="levelIcon8">
+                                    <param id="0" name="Opacity">20</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="3598793090519006" type="levelIcon9">
+                                    <param id="0" name="Opacity">20</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="5317368844411411" type="levelIcon10">
+                                    <param id="0" name="Opacity">20</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5383180388224374">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="3896735336089797" type="System">
+                                    <param id="0" name="Variable">historicalLevel</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">8</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="4611853423357088" type="levelIcon1">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="1505242366797314" type="levelIcon2">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="4392771171627163" type="levelIcon3">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="3421072587046167" type="levelIcon4">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="8261184159844448" type="levelIcon5">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="6484027202316017" type="levelIcon6">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="7095616824963039" type="levelIcon7">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="8839789767748531" type="levelIcon8">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="9180313351433214" type="levelIcon9">
+                                    <param id="0" name="Opacity">20</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="892911893313748" type="levelIcon10">
+                                    <param id="0" name="Opacity">20</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="2652689340887144">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="6603047210415511" type="System">
+                                    <param id="0" name="Variable">historicalLevel</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">9</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="9190591209741969" type="levelIcon1">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="1893861425633313" type="levelIcon2">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="3648184800713631" type="levelIcon3">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="9891408244775926" type="levelIcon4">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="8236244550484063" type="levelIcon5">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="1193480638009995" type="levelIcon6">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="2215241425198321" type="levelIcon7">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="1295731246134713" type="levelIcon8">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="6027418342244789" type="levelIcon9">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="8634738731322676" type="levelIcon10">
+                                    <param id="0" name="Opacity">20</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6685824974053171">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="5557884550845585" type="System">
+                                    <param id="0" name="Variable">historicalLevel</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">10</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="8709401454439754" type="levelIcon1">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="1886681474506909" type="levelIcon2">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="1130519577454716" type="levelIcon3">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="4782418824015681" type="levelIcon4">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="2731343331295911" type="levelIcon5">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="5003380923297885" type="levelIcon6">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="6955628999250353" type="levelIcon7">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="4694459774217059" type="levelIcon8">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="446772001508928" type="levelIcon9">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="9095813488325692" type="levelIcon10">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Level navigation.</comment>
+                <event-block sid="6976518129829444">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="8424076302418047" type="Touch">
+                            <param id="0" name="Object">levelIcon1</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="6890723150505514" type="System">
+                            <param id="0" name="Variable">historicalLevel</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="459442474210411" type="System">
+                            <param id="0" name="Layout">Level1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="971731035635108" type="System">
+                            <param id="0" name="Variable">level</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5803383078752826">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="2821155576597861" type="Touch">
+                            <param id="0" name="Object">levelIcon2</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="2351378959151968" type="System">
+                            <param id="0" name="Variable">historicalLevel</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="62758162155018" type="System">
+                            <param id="0" name="Layout">Level2</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="3820948265132375" type="System">
+                            <param id="0" name="Variable">level</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8225394549442733">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="2742928715355966" type="Touch">
+                            <param id="0" name="Object">levelIcon3</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="4983405688873266" type="System">
+                            <param id="0" name="Variable">historicalLevel</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="6068695730942747" type="System">
+                            <param id="0" name="Layout">Level3</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="8433959041409259" type="System">
+                            <param id="0" name="Variable">level</param>
+                            <param id="1" name="Value">3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="991383030605135">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="5087984144073595" type="Touch">
+                            <param id="0" name="Object">levelIcon4</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="1681994731778275" type="System">
+                            <param id="0" name="Variable">historicalLevel</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">4</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="9938740942183076" type="System">
+                            <param id="0" name="Layout">Level4</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="8378559831043168" type="System">
+                            <param id="0" name="Variable">level</param>
+                            <param id="1" name="Value">4</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6500326138219081">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="2186587783426183" type="Touch">
+                            <param id="0" name="Object">levelIcon5</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="7098242653879658" type="System">
+                            <param id="0" name="Variable">historicalLevel</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="6471632657678544" type="System">
+                            <param id="0" name="Layout">Level5</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="5951127828551979" type="System">
+                            <param id="0" name="Variable">level</param>
+                            <param id="1" name="Value">5</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3135637145287869">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="4484301063022075" type="Touch">
+                            <param id="0" name="Object">levelIcon6</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="424574413840269" type="System">
+                            <param id="0" name="Variable">historicalLevel</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">6</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="4269396930710851" type="System">
+                            <param id="0" name="Layout">Level6</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="887544068226929" type="System">
+                            <param id="0" name="Variable">level</param>
+                            <param id="1" name="Value">6</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4574413680549537">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="570357132658409" type="Touch">
+                            <param id="0" name="Object">levelIcon7</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="2044796246502343" type="System">
+                            <param id="0" name="Variable">historicalLevel</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">7</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="9968751905119856" type="System">
+                            <param id="0" name="Layout">Level7</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="7119504823222598" type="System">
+                            <param id="0" name="Variable">level</param>
+                            <param id="1" name="Value">7</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5559808158480095">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="4204207835951033" type="Touch">
+                            <param id="0" name="Object">levelIcon8</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="7585116376448053" type="System">
+                            <param id="0" name="Variable">historicalLevel</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">8</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="3673862342341535" type="System">
+                            <param id="0" name="Layout">Level8</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="6295817794993607" type="System">
+                            <param id="0" name="Variable">level</param>
+                            <param id="1" name="Value">8</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9468414313167363">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="2079929076097958" type="Touch">
+                            <param id="0" name="Object">levelIcon9</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="9752624369765617" type="System">
+                            <param id="0" name="Variable">historicalLevel</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">9</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="8783156193233656" type="System">
+                            <param id="0" name="Layout">Level9</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="9046970385573671" type="System">
+                            <param id="0" name="Variable">level</param>
+                            <param id="1" name="Value">9</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1380847226025728">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="3182174684602629" type="Touch">
+                            <param id="0" name="Object">levelIcon10</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="5375886450274461" type="System">
+                            <param id="0" name="Variable">historicalLevel</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">10</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="8090187980931625" type="System">
+                            <param id="0" name="Layout">Level10</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="9521099534583579" type="System">
+                            <param id="0" name="Variable">level</param>
+                            <param id="1" name="Value">10</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <comment>If the dog falls outside the layout, destroy it, display game over text, then restart after 2 seconds.</comment>
+        <event-block sid="7656257914551721">
+            <conditions>
+                <condition id="-4" name="Is outside layout" sid="6377967334316509" type="dog" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="6847051283001169" type="dog" />
+                <action id="-16" name="Wait" sid="3393152525115572" type="System">
+                    <param id="0" name="Seconds">2</param>
+                </action>
+                <action id="-15" name="Set visible" sid="8169181104201868" type="btnRestart">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="8945352861607502" type="btnHome">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Level wins.</comment>
+        <event-block sid="5952953590384865">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="193464642891315" type="dog">
+                    <param id="0" name="Object">foodBowl</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="8352510694229829" type="Audio">
+                    <param id="0" name="Audio file">itemCollected</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;levelFinished&quot;</param>
+                </action>
+                <action id="-9" name="Destroy" sid="4854236368512792" type="foodBowl" />
+                <action id="-15" name="Set visible" sid="2842610326032805" type="btnHome">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="674943098375088" type="btnRestart">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="574983152391443">
+                    <conditions>
+                        <condition id="5" inverted="1" name="Is tag playing" sid="2712419685290136" type="Audio">
+                            <param id="0" name="Tag">&quot;levelFinished&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="7204498363697225" type="System">
+                            <param id="0" name="Seconds">4</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="6500687044182741" type="dog" />
+                        <action id="-2" name="Go to layout" sid="2611673117795165" type="System">
+                            <param id="0" name="Layout">levelSelect</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Increase the historical level if player has won a new level.</comment>
+                <event-block sid="9411459240838973">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="3011877621515589" type="System">
+                            <param id="0" name="First value">level + 1</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">historicalLevel + 1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="2569932756097668" type="System">
+                            <param id="0" name="Variable">historicalLevel</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="392054211448397">
+            <conditions>
+                <condition id="9" name="Is overlapping at offset" sid="5442780836178802" type="dog">
+                    <param id="0" name="Object">Ground</param>
+                    <param id="1" name="Offset X">0</param>
+                    <param id="2" name="Offset Y">10</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="1775860715527968" type="System" />
+                <condition id="-3" name="Is on-screen" sid="5080605860145256" type="foodBowl" />
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="9177345093148973" type="System">
+                    <param id="0" name="Seconds">1.5</param>
+                </action>
+                <action id="-9" name="Destroy" sid="171593348298784" type="dog" />
+                <action id="-15" name="Set visible" sid="9314528474776441" type="btnRestart">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="4229662757685358" type="btnHome">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3888674189006358">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="8166186692853183" type="dog">
+                    <param id="0" name="Object">chewToy</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="3927013603330944">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="5179836276522293" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Fade" id="1" name="Start fade" sid="5367438163980107" type="chewToy" />
+                        <action id="-10" name="Add to" sid="6472468205717114" type="System">
+                            <param id="0" name="Variable">chewToys</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="3471690701753995">
+            <conditions>
+                <condition id="-8" name="Compare two values" sid="7441340902305778" type="System">
+                    <param id="0" name="First value">crate.Count</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">0</param>
+                </condition>
+                <condition id="9" name="Is overlapping at offset" sid="8037129402477626" type="dog">
+                    <param id="0" name="Object">Ground</param>
+                    <param id="1" name="Offset X">0</param>
+                    <param id="2" name="Offset Y">10</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="7996672695845697" type="System" />
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="6313973270313181" type="btnRestart">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="8476598949145199" type="btnHome">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>If all the boxes have been destroyed and the dog is on the floor (it overlaps it 10 pixels down), display the success text then restart after 2 seconds.</comment>
+        <comment>Planks and boxes should be destroyed outside of the layout.</comment>
+        <event-block sid="8236166650062087">
+            <conditions>
+                <condition id="-4" name="Is outside layout" sid="8128082705064861" type="crate" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="446362749788242" type="crate" />
+            </actions>
+        </event-block>
+        <event-block sid="8422966154921916">
+            <conditions>
+                <condition id="-4" name="Is outside layout" sid="6685254322330695" type="steelPlank" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="6476595103742903" type="steelPlank" />
+            </actions>
+        </event-block>
+        <event-block sid="5307699994202537">
+            <conditions>
+                <condition id="-4" name="Is outside layout" sid="9971465995148005" type="woodPlank" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="1475223368517476" type="woodPlank" />
+            </actions>
+        </event-block>
+        <event-block sid="4421842227149624">
+            <conditions>
+                <condition id="-4" name="Is outside layout" sid="2357907550366511" type="woodPlankShort" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="8086766567388353" type="woodPlankShort" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
