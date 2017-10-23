@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta charset="utf-8">
+	<title>Drift Race</title>
+	
+	<meta name="viewport" content="width=device-width,user-scalable=0,initial-scale=1, minimum-scale=1,maximum-scale=1">
+
+ 
+	<meta name="keywords" content>
+	<link rel="stylesheet" type="text/css" href="css/style-mobile.css">
+
+
+	
+	
+    
+	<style>#sg-loadscrn{
+    position:fixed; top:0;left:0;width:100%; height:100%; background-color:#fff; z-index:9999;
+}
+
+#sg-spinner{
+	position: absolute; width: 150px; height: 50px; top:50%; left:50%; margin-top:-25px; margin-left:-75px;
+	background-image: url('./assets/sg-loader.gif');
+}
+
+#sg-spinner.no-img{
+    background: #ffffff;
+}
+
+#sg-loadtext{
+    position:absolute;
+    font-family: sans-serif;
+    top:50%; left:50%;
+    width: 250px;
+    margin-left:-125px;
+    margin-top:-125px;
+    text-align:center;
+    line-height:150%;
+    font-size:16px;
+}</style>
+   
+<script type="text/javascript" src="softgames_game.js"></script>
+ 
+</head>
+
+<body onload="startGame();">
+	<div id="orientation"></div>
+	<canvas id="GameCanvas" oncontextmenu="event.preventDefault()" tabindex="0"></canvas>
+	<div id="splash">
+ 
+	</div>
+
+	<script>
+		/*window.onload*/
+		startGame = function() {
+			console.log("startGame");
+			// window.lang = SG.lang; //SG_Hooks.getLanguage(['en','ru']); ,'es','de','fr','it','pt','tr', 'nl', 'pl']
+
+			var splash = document.getElementById('splash');
+			splash.style.display = 'block';
+
+			var cocos2d = document.createElement('script');
+			cocos2d.async = true;
+			cocos2d.src = 'src/cocos2d-js-min.js';
+
+			var engineLoaded = function () {
+				document.body.removeChild(cocos2d);
+				cocos2d.removeEventListener('load', engineLoaded, false);
+				Booter.boot();
+			};
+			cocos2d.addEventListener('load', engineLoaded, false);
+			document.body.appendChild(cocos2d);
+		}
+	</script>
+</body>
+
+</html>
