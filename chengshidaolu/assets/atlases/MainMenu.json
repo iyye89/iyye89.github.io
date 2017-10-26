@@ -1,0 +1,52 @@
+{"frames": {
+
+"button_play.png":
+{
+	"frame": {"x":958,"y":422,"w":230,"h":230},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":230,"h":230},
+	"sourceSize": {"w":230,"h":230}
+},
+"button_settings.png":
+{
+	"frame": {"x":1189,"y":422,"w":194,"h":194},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":194,"h":194},
+	"sourceSize": {"w":194,"h":194}
+},
+"menu_grass_city.png":
+{
+	"frame": {"x":0,"y":0,"w":1920,"h":421},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1920,"h":421},
+	"sourceSize": {"w":1920,"h":421}
+},
+"menu_logo_bg.png":
+{
+	"frame": {"x":0,"y":422,"w":507,"h":407},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":507,"h":407},
+	"sourceSize": {"w":507,"h":407}
+},
+"menu_logo_tint.png":
+{
+	"frame": {"x":508,"y":422,"w":449,"h":336},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":26,"y":27,"w":449,"h":336},
+	"sourceSize": {"w":507,"h":407}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "MainMenu.png",
+	"format": "RGBA8888",
+	"size": {"w":1920,"h":829},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:aae799d2e1010016345747c5413c79fd:99e0fa32dbd012ba07ee4814d2f7528c:ab357e3e240c4c71dea6911e196f700c$"
+}
+}

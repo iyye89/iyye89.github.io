@@ -1,0 +1,9 @@
+@font-face {
+    font-family:"FrutigerCondensed";
+    src:    url("../fonts/FrutigerCondensed/FrutigerLTStd-Cn.eot?")                format("eot"),
+            url("../fonts/FrutigerCondensed/FrutigerLTStd-Cn.woff")                format("woff"),
+            url("../fonts/FrutigerCondensed/FrutigerLTStd-Cn.ttf")                 format("truetype"),
+            url("../fonts/FrutigerCondensed/FrutigerLTStd-Cn.svg#FrutigerLTStd-Cn")    format("svg");
+    font-weight:normal;
+    font-style:normal;
+}

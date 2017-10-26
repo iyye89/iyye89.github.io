@@ -1,0 +1,132 @@
+{"frames": {
+
+"button_leve_meter_03.png":
+{
+	"frame": {"x":42,"y":0,"w":22,"h":38},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":38},
+	"sourceSize": {"w":22,"h":38}
+},
+"button_leve_meter_06.png":
+{
+	"frame": {"x":150,"y":0,"w":22,"h":68},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":68},
+	"sourceSize": {"w":22,"h":68}
+},
+"button_leve_meter_09.png":
+{
+	"frame": {"x":418,"y":0,"w":22,"h":103},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":22,"h":103},
+	"sourceSize": {"w":22,"h":103}
+},
+"button_level.png":
+{
+	"frame": {"x":441,"y":0,"w":136,"h":122},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":5,"y":24,"w":136,"h":122},
+	"sourceSize": {"w":146,"h":146}
+},
+"button_level_01.png":
+{
+	"frame": {"x":578,"y":0,"w":136,"h":123},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":5,"y":23,"w":136,"h":123},
+	"sourceSize": {"w":146,"h":146}
+},
+"button_level_02.png":
+{
+	"frame": {"x":715,"y":0,"w":137,"h":123},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":5,"y":23,"w":137,"h":123},
+	"sourceSize": {"w":146,"h":146}
+},
+"button_level_03.png":
+{
+	"frame": {"x":853,"y":0,"w":138,"h":123},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":4,"y":23,"w":138,"h":123},
+	"sourceSize": {"w":146,"h":146}
+},
+"button_level_bonus.png":
+{
+	"frame": {"x":243,"y":0,"w":84,"h":77},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":84,"h":77},
+	"sourceSize": {"w":84,"h":77}
+},
+"button_level_bonus_outline_shadow.png":
+{
+	"frame": {"x":992,"y":0,"w":144,"h":124},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":22,"w":144,"h":124},
+	"sourceSize": {"w":146,"h":146}
+},
+"button_level_bottom.png":
+{
+	"frame": {"x":65,"y":0,"w":84,"h":66},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":31,"y":80,"w":84,"h":66},
+	"sourceSize": {"w":146,"h":146}
+},
+"button_level_house_01.png":
+{
+	"frame": {"x":22,"y":0,"w":19,"h":37},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":19,"h":37},
+	"sourceSize": {"w":19,"h":37}
+},
+"button_level_house_02.png":
+{
+	"frame": {"x":0,"y":0,"w":21,"h":26},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":21,"h":26},
+	"sourceSize": {"w":21,"h":26}
+},
+"button_level_locked.png":
+{
+	"frame": {"x":173,"y":0,"w":69,"h":69},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":69,"h":69},
+	"sourceSize": {"w":69,"h":69}
+},
+"button_level_locked_shadow.png":
+{
+	"frame": {"x":328,"y":0,"w":89,"h":89},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":28,"y":35,"w":89,"h":89},
+	"sourceSize": {"w":146,"h":146}
+},
+"level_select_bg_island.png":
+{
+	"frame": {"x":0,"y":125,"w":1616,"h":1560},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":103,"y":75,"w":1616,"h":1560},
+	"sourceSize": {"w":1720,"h":1666}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "LevelMap.png",
+	"format": "RGBA8888",
+	"size": {"w":1616,"h":1685},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:1e56515b4712d65fbed76ccd61e2f719:7a798ab0b9b741148e534271411a122d:893ff8f7edb4212a8d752072e2e8227e$"
+}
+}

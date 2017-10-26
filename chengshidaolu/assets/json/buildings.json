@@ -1,0 +1,570 @@
+{
+  "21": {
+    "direction": 0,
+    "image": "house_building_02.png",
+    "layout": 0,
+    "position": [0, -24]
+  },
+  "22": {
+    "direction": 1,
+    "image": "house_building_01.png",
+    "layout": 0,
+    "position": [0, -24]
+  },
+  "23": {
+    "direction": 2,
+    "image": "house_building_02.png",
+    "layout": 0,
+    "position": [0, -24]
+  },
+  "24": {
+    "direction": 3,
+    "image": "house_building_01.png",
+    "layout": 0,
+    "position": [0, -24]
+  },
+  "25": {
+    "direction": 0,
+    "image": "hospital_building_02.png",
+    "layout": 1,
+    "position": [10, -50]
+  },
+  "26": {
+    "direction": 1,
+    "image": "hospital_building_01.png",
+    "layout": 1,
+    "position": [-34, -42]
+  },
+  "27": {
+    "direction": 2,
+    "image": "hospital_building_02.png",
+    "layout": 1,
+    "position": [-28, -22]
+  },
+  "28": {
+    "direction": 3,
+    "image": "hospital_building_01.png",
+    "layout": 1,
+    "position": [4, -14]
+  },
+  "29": {
+    "direction": 0,
+    "image": "police_building_02.png",
+    "layout": 1,
+    "position": [20, -42]
+  },
+  "30": {
+    "direction": 1,
+    "image": "police_building_01.png",
+    "layout": 1,
+    "position": [-20, -42]
+  },
+  "31": {
+    "direction": 2,
+    "image": "police_building_02.png",
+    "layout": 1,
+    "position": [-16, -12]
+  },
+  "32": {
+    "direction": 3,
+    "image": "police_building_01.png",
+    "layout": 1,
+    "position": [20, -14]
+  },
+  "33": {
+    "direction": 0,
+    "image": "firefighter_building_02.png",
+    "layout": 1,
+    "position": [20, -38]
+  },
+  "34": {
+    "direction": 1,
+    "image": "firefighter_building_01.png",
+    "layout": 1,
+    "position": [-28, -40]
+  },
+  "35": {
+    "direction": 2,
+    "image": "firefighter_building_02.png",
+    "layout": 1,
+    "position": [-20, -10]
+  },
+  "36": {
+    "direction": 3,
+    "image": "firefighter_building_01.png",
+    "layout": 1,
+    "position": [10, -12]
+  },
+  "37": {
+    "direction": 0,
+    "image": "industry_building_02.png",
+    "layout": 1,
+    "position": [0, 12]
+  },
+  "38": {
+    "direction": 1,
+    "image": "industry_building_01.png",
+    "layout": 1,
+    "position": [0, 14]
+  },
+  "39": {
+    "direction": 2,
+    "image": "industry_building_02.png",
+    "layout": 1,
+    "position": [0, 12]
+  },
+  "40": {
+    "direction": 3,
+    "image": "industry_building_01.png",
+    "layout": 1,
+    "position": [0, 12]
+  },
+  "41": {
+    "direction": 0,
+    "image": "pizzeria_building_02.png",
+    "layout": 0,
+    "position": [0, -8]
+  },
+  "42": {
+    "direction": 1,
+    "image": "pizzeria_building_01.png",
+    "layout": 0,
+    "position": [0, -8]
+  },
+  "43": {
+    "direction": 2,
+    "image": "pizzeria_building_02.png",
+    "layout": 0,
+    "position": [2, -8]
+  },
+  "44": {
+    "direction": 3,
+    "image": "pizzeria_building_01.png",
+    "layout": 0,
+    "position": [2, -8]
+  },
+  "45": {
+    "direction": 0,
+    "image": "school_building_02.png",
+    "layout": 1,
+    "position": [30, -56]
+  },
+  "46": {
+    "direction": 1,
+    "image": "school_building_01.png",
+    "layout": 1,
+    "position": [-29, -56]
+  },
+  "47": {
+    "direction": 2,
+    "image": "school_building_02.png",
+    "layout": 1,
+    "position": [4, -32]
+  },
+  "48": {
+    "direction": 3,
+    "image": "school_building_01.png",
+    "layout": 1,
+    "position": [0, -32]
+  },
+  "49": {
+    "direction": 1,
+    "image": "townhall_building_02.png",
+    "layout": 2,
+    "position": [-7, -28]
+  },
+  "50": {
+    "direction": 0,
+    "image": "constructionsite_building_01.png",
+    "layout": 2,
+    "position": [10, -20]
+  },
+  "51": {
+    "direction": 0,
+    "image": "hugetree_building_01.png",
+    "layout": 3,
+    "position": [0, -82]
+  },
+  "52": {
+    "direction": 1,
+    "image": "golfcourse_building_01.png",
+    "layout": 2,
+    "position": [0, -10]
+  },
+  "53": {
+    "direction": 0,
+    "image": "powerplant_building_01.png",
+    "layout": 1,
+    "position": [24, -40]
+  },
+  "54": {
+    "direction": 1,
+    "image": "powerplant_building_01.png",
+    "layout": 1,
+    "position": [-10, -40]
+  },
+  "55": {
+    "direction": 2,
+    "image": "powerplant_building_01.png",
+    "layout": 1,
+    "position": [0, -32]
+  },
+  "56": {
+    "direction": 3,
+    "image": "powerplant_building_01.png",
+    "layout": 1,
+    "position": [4, -24]
+  },
+  "57": {
+    "direction": 0,
+    "image": "bank_building_01.png",
+    "layout": 1,
+    "position": [10, -96]
+  },
+  "58": {
+    "direction": 1,
+    "image": "bank_building_01.png",
+    "layout": 1,
+    "position": [-10, -96]
+  },
+  "59": {
+    "direction": 2,
+    "image": "bank_building_01.png",
+    "layout": 1,
+    "position": [-10, -84]
+  },
+  "60": {
+    "direction": 3,
+    "image": "bank_building_01.png",
+    "layout": 1,
+    "position": [12, -82]
+  },
+  "61": {
+    "direction": 0,
+    "image": "bowling_building_02.png",
+    "layout": 1,
+    "position": [18, -36]
+  },
+  "62": {
+    "direction": 1,
+    "image": "bowling_building_01.png",
+    "layout": 1,
+    "position": [-18, -34]
+  },
+  "63": {
+    "direction": 2,
+    "image": "bowling_building_02.png",
+    "layout": 1,
+    "position": [-12, -18]
+  },
+  "64": {
+    "direction": 3,
+    "image": "bowling_building_01.png",
+    "layout": 1,
+    "position": [12, -20]
+  },
+  "65": {
+    "direction": 0,
+    "image": "radio_building_02.png",
+    "layout": 1,
+    "position": [18, -146]
+  },
+  "66": {
+    "direction": 1,
+    "image": "radio_building_01.png",
+    "layout": 1,
+    "position": [-18, -146]
+  },
+  "67": {
+    "direction": 2,
+    "image": "radio_building_02.png",
+    "layout": 1,
+    "position": [-18, -118]
+  },
+  "68": {
+    "direction": 3,
+    "image": "radio_building_01.png",
+    "layout": 1,
+    "position": [18, -118]
+  },
+  "69": {
+    "direction": 0,
+    "image": "tv_building_02.png",
+    "layout": 1,
+    "position": [24, -106]
+  },
+  "70": {
+    "direction": 1,
+    "image": "tv_building_01.png",
+    "layout": 1,
+    "position": [-16, -108]
+  },
+  "71": {
+    "direction": 2,
+    "image": "tv_building_02.png",
+    "layout": 1,
+    "position": [-16, -76]
+  },
+  "72": {
+    "direction": 3,
+    "image": "tv_building_01.png",
+    "layout": 1,
+    "position": [30, -74]
+  },
+  "73": {
+    "direction": 0,
+    "image": "theater_building_01.png",
+    "layout": 1,
+    "position": [20, -72]
+  },
+  "74": {
+    "direction": 1,
+    "image": "theater_building_01.png",
+    "layout": 1,
+    "position": [-16, -72]
+  },
+  "75": {
+    "direction": 2,
+    "image": "theater_building_01.png",
+    "layout": 1,
+    "position": [-20, -44]
+  },
+  "76": {
+    "direction": 3,
+    "image": "theater_building_01.png",
+    "layout": 1,
+    "position": [22, -44]
+  },
+  "77": {
+    "direction": 0,
+    "image": "airport_building_01.png",
+    "layout": 2,
+    "position": [26, -30]
+  },
+  "78": {
+    "direction": 2,
+    "image": "airport_building_01.png",
+    "layout": 2,
+    "position": [0, -10]
+  },
+  "79": {
+    "direction": 0,
+    "image": "mall_building_01.png",
+    "layout": 2,
+    "position": [26, -50]
+  },
+  "80": {
+    "direction": 2,
+    "image": "mall_building_01.png",
+    "layout": 2,
+    "position": [-2, -28]
+  },
+  "81": {
+    "direction": 0,
+    "image": "stadion_building_01.png",
+    "layout": 2,
+    "position": [18, -30]
+  },
+  "82": {
+    "direction": 2,
+    "image": "stadion_building_01.png",
+    "layout": 2,
+    "position": [0, -16]
+  },
+  "83": {
+    "direction": 1,
+    "image": "fairground_building_01.png",
+    "layout": 2,
+    "position": [-22, -36]
+  },
+  "84": {
+    "direction": 3,
+    "image": "fairground_building_01.png",
+    "layout": 2,
+    "position": [4, -20]
+  },
+  "85": {
+    "direction": 0,
+    "image": "office_building_02.png",
+    "layout": 0,
+    "position": [0, -12]
+  },
+  "86": {
+    "direction": 1,
+    "image": "office_building_01.png",
+    "layout": 0,
+    "position": [0, -12]
+  },
+  "87": {
+    "direction": 2,
+    "image": "office_building_02.png",
+    "layout": 0,
+    "position": [0, -12]
+  },
+  "88": {
+    "direction": 3,
+    "image": "office_building_01.png",
+    "layout": 0,
+    "position": [0, -12]
+  },
+  "89": {
+    "direction": 0,
+    "image": "metro_building_02.png",
+    "layout": 1,
+    "position": [4, -14]
+  },
+  "90": {
+    "direction": 1,
+    "image": "metro_building_01.png",
+    "layout": 1,
+    "position": [0, -14]
+  },
+  "91": {
+    "direction": 2,
+    "image": "metro_building_02.png",
+    "layout": 1,
+    "position": [-38, 14]
+  },
+  "92": {
+    "direction": 3,
+    "image": "metro_building_01.png",
+    "layout": 1,
+    "position": [40, 16]
+  },
+  "93": {
+    "direction": 0,
+    "image": "pettingzoo_building_01.png",
+    "layout": 1,
+    "position": [20, 4]
+  },
+  "94": {
+    "direction": 1,
+    "image": "pettingzoo_building_01.png",
+    "layout": 1,
+    "position": [-20, 4]
+  },
+  "95": {
+    "direction": 2,
+    "image": "pettingzoo_building_01.png",
+    "layout": 1,
+    "position": [-18, 34]
+  },
+  "96": {
+    "direction": 3,
+    "image": "pettingzoo_building_01.png",
+    "layout": 1,
+    "position": [18, 34]
+  },
+  "97": {
+    "direction": 0,
+    "image": "basketball_building_01.png",
+    "layout": 1,
+    "position": [22, -50]
+  },
+  "98": {
+    "direction": 1,
+    "image": "basketball_building_02.png",
+    "layout": 1,
+    "position": [-22, -50]
+  },
+  "99": {
+    "direction": 2,
+    "image": "basketball_building_01.png",
+    "layout": 1,
+    "position": [-18, -22]
+  },
+  "100": {
+    "direction": 3,
+    "image": "basketball_building_02.png",
+    "layout": 1,
+    "position": [22, -26]
+  },
+  "101": {
+    "direction": 0,
+    "image": "bakery_building_02.png",
+    "layout": 1,
+    "position": [8, -44]
+  },
+  "102": {
+    "direction": 1,
+    "image": "bakery_building_01.png",
+    "layout": 1,
+    "position": [-6, -44]
+  },
+  "103": {
+    "direction": 2,
+    "image": "bakery_building_02.png",
+    "layout": 1,
+    "position": [0, -36]
+  },
+  "104": {
+    "direction": 3,
+    "image": "bakery_building_01.png",
+    "layout": 1,
+    "position": [6, -36]
+  },
+  "105": {
+    "direction": 0,
+    "image": "zoo_building_01.png",
+    "layout": 2,
+    "position": [12, -30]
+  },
+  "106": {
+    "direction": 0,
+    "image": "botanic_building_01.png",
+    "layout": 2,
+    "position": [12, -30]
+  },
+  "107": {
+    "direction": 1,
+    "image": "botanic_building_01.png",
+    "layout": 2,
+    "position": [12, -30]
+  },
+  "108": {
+    "direction": 0,
+    "image": "townhall_building_01.png",
+    "layout": 2,
+    "position": [12, -30]
+  },
+  "109": {
+    "direction": 1,
+    "image": "university_building_01.png",
+    "layout": 2,
+    "position": [12, -30]
+  },
+  "110": {
+    "direction": 1,
+    "image": "circus_buildig_01.png",
+    "layout": 2,
+    "position": [0, 12]
+  },
+  "112": {
+    "image": "flowers_decoration_01.png",
+    "position": [10, 26]
+  },
+  "113": {
+    "image": "statue_decoration_02.png",
+    "position": [0, -6]
+  },
+  "114": {
+    "image": "statue_decoration_03.png",
+    "position": [0, -8]
+  },
+  "115": {
+    "image": "pond_decoration_01.png",
+    "position": [10, 42]
+  },
+  "116": {
+    "image": "fountain_building_01.png",
+    "position": [0, -4]
+  },
+  "117": {
+    "image": "roundpark_decoration_01.png",
+    "position": [0, 14]
+  },
+  "construction_site": {
+    "image": "construction_building_01.png",
+    "position": [0, 30]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "bonus_001": {
+    "joy": 9,
+    "health": 6,
+    "safety": 12
+  },
+  "bonus_002": {
+    "joy": 24,
+    "health": 21,
+    "safety": 39
+  },
+  "bonus_003": {
+    "joy": 47,
+    "health": 38,
+    "safety": 54
+  },
+  "bonus_004": {
+    "joy": 60,
+    "health": 55,
+    "safety": 70
+  },
+  "bonus_005": {
+    "joy": 1000,
+    "health": 1000,
+    "safety": 1000
+  },
+  "bonus_006": {
+    "joy": 1000,
+    "health": 1000,
+    "safety": 1000
+  }
+}
