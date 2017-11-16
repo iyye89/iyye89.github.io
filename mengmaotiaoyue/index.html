@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0, minimal-ui" />
+	<style>
+		body {
+			margin: 0px;
+			padding: 0px;
+			width: 100%;
+			background-color:black;
+		}	
+
+		canvas {	
+			-ms-touch-action: none;
+			image-rendering: -o-crisp-edges;           
+			image-rendering: optimize-contrast;        
+			-ms-interpolation-mode: nearest-neighbor;  
+			-webkit-tap-highlight-color: rgba(0,0,0,0);
+			-moz-tap-highlight-color: rgba(0,0,0,0);
+			tap-highlight-color: rgba(0,0,0,0);
+			user-select: none;
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+		} 
+	</style>
+    <script>
+    </script>
+
+</head>
+    <script src="viewporter.js"></script>
+	    <!-- Include the HTML5 API -->
+    <script type="text/javascript">
+        var mode = (RegExp('bm.mode' + '=' + '(.+?)(&|$)').exec(location.search) || [, null])[1];
+
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.setAttribute('id', 'booster-api');
+
+       // if (mode == "test") {
+            script.src = 'http://g.wanh5.com/cwf/mmpy/shared/booster/api.js';
+        //} else {
+       //     script.src = '/shared/booster/api.js';
+       // }
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(script, s);
+    </script>
+    <script type="text/javascript">
+        var Booster = window.Booster || {};
+
+        Booster.ready = function() {
+
+            new Booster.Init({
+                orientation: 'landscape',
+                splash: true,
+                minimalUI: true
+            });
+
+            adSense = new Booster.Ad({
+                type: 'adsense',
+                size: '300x250',
+                channelID: 1224474826
+            });
+			
+			community = new Booster.Community({
+                position: 1,
+                gameCode: '0050-extreme_kitt'
+            });
+			
+			analytics = new Booster.Analytics({
+                gameName: 'Extreme Kitten',
+                gameId: '0050-extreme_kitt',
+                gameCategory: 'Arcade',
+                developer: '0050'
+            });
+			
+			moregames = new Booster.Moregames();
+						
+			boosterLoaded(adSense, community, analytics, moregames);
+        };
+    </script>
+	<body> 
+		<div id="viewporter">
+		   <canvas id="canvas" moz-opaque></canvas>
+		</div>
+	</body>
+	<script src="TweenMax.min.js"></script>
+	<script src="howler.js"></script>
+	<script src="app.js"></script>
+
+</html>
